@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Journal</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<!-- body and <div class="container> get closed in footer.ejs -->
+  <nav class="navbar-container">
+
+      <div class="nav navbar-nav navbar-left">
+        <a id="nav-logo" href="/">DAILY JOURNAL</a>
+      </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/">HOME</a></li>
+        <!-- only allow users that are authenticated see the compose, register, and logout paths -->
+        <% if (loggedin) { %>
+          <li><a href="/compose">COMPOSE</a></li>
+          <li><a href="/register">REGISTER</a></li>
+          <li><a href="/logout">LOGOUT</a></li>
+        <% } else { %>
+          <li><a href="/login">LOGIN</a></li>
+        <% } %>
+      </ul>
+
+  </nav>
+
+  <div class="container">
